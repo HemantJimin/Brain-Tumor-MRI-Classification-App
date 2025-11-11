@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor MRI Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Brain Tumor MRI Classification</h1>
+        <p class="subtitle">Upload an MRI image to classify tumor type</p>
+        <div class="upload-section">
+            <input type="file" id="imageInput" accept="image/*">
+            <label for="imageInput" class="upload-btn">Choose MRI Image</label>
+            <button id="predictBtn" class="predict-btn" disabled>Analyze Image</button>
+        </div>
+        <div id="imagePreview" class="image-preview"></div>
+        <div id="results" class="results" style="display: none;">
+            <h2>Analysis Results</h2>
+            <div class="prediction"><span class="label">Prediction:</span><span id="predictionText" class="value"></span></div>
+            <div class="confidence"><span class="label">Confidence:</span><span id="confidenceText" class="value"></span></div>
+            <div id="allPredictions" class="all-predictions"></div>
+        </div>
+        <div id="loading" class="loading" style="display: none;"><div class="spinner"></div><p>Analyzing image...</p></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
